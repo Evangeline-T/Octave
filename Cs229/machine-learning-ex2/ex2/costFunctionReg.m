@@ -19,10 +19,10 @@ grad = zeros(size(theta));
 
 h = sigmoid(X*theta);
 J = 1/m*sum(-y'*log(h) - (1-y)'*log(1-h));
-J = J + lambda/2/m*sum(theta(2:end).^2);  #正则化项
+J = J + lambda/2/m*sum(theta.^2);  #脮媒脭貌禄炉脧卯
 grad = zeros(size(theta));
 grad = 1/m*X'*(h-y);
-grad(2:end) = grad(2:end) + lambda/m*theta(2:end); #正则化项
+grad(2:end) = grad(2:end) + lambda/m*theta(2:end); #脮媒脭貌禄炉脧卯
 
 
 % =============================================================
