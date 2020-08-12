@@ -19,7 +19,7 @@ grad = zeros(size(theta));
 
 h = sigmoid(X*theta);
 J = 1/m*sum(-y'*log(h) - (1-y)'*log(1-h));
-J = J + lambda/2/m*sum(theta.^2);  #ÕýÔò»¯Ïî
+J = J + lambda/2/m*sum(theta(2:end).^2);  # should not regularize theta(1)
 grad = zeros(size(theta));
 grad = 1/m*X'*(h-y);
 grad(2:end) = grad(2:end) + lambda/m*theta(2:end); #ÕýÔò»¯Ïî
