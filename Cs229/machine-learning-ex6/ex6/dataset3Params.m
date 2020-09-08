@@ -26,10 +26,7 @@ sigma = 0.3;
 
 C_array = [0.01,0.03,0.1,0.3,1,3,10,30];
 sigma_array = [0.01,0.03,0.1,0.3,1,3,10,30];
-C_cur = C;
-sigma_cur = sigma;
-error = length(yval);
-error_cur = error;
+error = 1000000  % any large number is ok.
 for i = 1:8
   for j = 1:8
     C_cur = C_array(i);
@@ -41,13 +38,8 @@ for i = 1:8
       error = error_cur;
       C = C_cur;
       sigma = sigma_cur;
-    endif
-  endfor
-endfor
-
-error
-C
-
+    end
+  end
 % =========================================================================
 
 end
