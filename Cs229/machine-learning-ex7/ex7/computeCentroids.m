@@ -35,7 +35,7 @@ centroids = zeros(K, n);
 
 
 for i =1:K
-    centroids(i,:) = sum(X .* (idx == i)) / sum(idx == i)
+    centroids(i,:) = (idx == i)' * X/ sum(idx == i)
 
 % =============================================================
 
