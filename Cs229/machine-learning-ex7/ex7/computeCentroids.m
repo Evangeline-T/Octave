@@ -25,13 +25,17 @@ centroids = zeros(K, n);
 % Note: You can use a for-loop over the centroids to compute this.
 %
 
-for i = 1:K
-  Xk = X(find(idx==i),:);
-  count = size(Xk,1);
-  if count > 0
-    centroids(i,:) = sum(Xk,1)/count;  
-  endif
-endfor
+%for i = 1:K
+%  Xk = X(find(idx==i),:);
+%  count = size(Xk,1);
+%  if count > 0
+%    centroids(i,:) = sum(Xk,1)/count;  
+%  endif
+%endfor
+
+
+for i =1:K
+    centroids(i,:) = sum(X .* (idx == i)) / sum(idx == i)
 
 % =============================================================
 
